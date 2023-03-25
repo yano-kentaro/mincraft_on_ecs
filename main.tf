@@ -20,50 +20,6 @@ provider "aws" {
 }
 
 
-# ECS
-resource "aws_ecs_cluster" "minecraft_cluster" {
-  name = "minecraft_cluster"
-}
-
-resource "aws_ecs_task_definition" "minecraft_task" {
-  family                   = "minecraft_task"
-  requires_compatibilities = ["FARGATE"]
-  network_mode             = "awsvpc"
-  cpu                      = "2048"
-  memory                   = "4096"
-  execution_role_arn       = aws_iam_role.ecs_execution_role.arn
-  task_role_arn            = aws_iam_role.ecs_task_role.arn
-
-  container_definitions = jsonencode([{
-    name      = "minecraft_server"
-    image     = var.minecraft_server_image
-    cpu       = 2048
-    memory    = 4096
-    essential = true
-    portMappings = [
-      {
-        containerPort = 25565
-        hostPort      = 25565
-        protocol      = "tcp"
-      }
-    ]
-    logConfiguration = {
-      logDriver = "awslogs"
-      options = {
-        "awslogs-group"         = aws_cloudwatch_log_group.minecraft_logs.name
-        "awslogs-region"        = var.region
-        "awslogs-stream-prefix" = "minecraft"
-      }
-    }
-    environment = [
-      {
-        name  = "EULA"
-        value = "TRUE"
-      }
-    ]
-  }])
-}
-
 resource "aws_iam_role" "ecs_execution_role" {
   name = "ecs_execution_role"
 
