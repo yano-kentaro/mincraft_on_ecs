@@ -20,10 +20,6 @@ provider "aws" {
 }
 
 
-resource "aws_cloudwatch_log_group" "minecraft_logs" {
-  name = "minecraft_logs"
-}
-
 resource "aws_lb_target_group" "minecraft_target_group" {
   name        = "minecraft-tg"
   port        = 25565
