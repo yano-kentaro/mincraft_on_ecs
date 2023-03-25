@@ -1,0 +1,14 @@
+{
+    "[terraform]": {
+        "editor.tabSize": 2
+    },
+    "[terraform-vars]": {
+        "editor.tabSize": 2
+    },
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#5B33B2",
+        "titleBar.activeForeground": "#FFFFFF",
+        "activityBar.background": "#7A42BC",
+        "activityBar.foreground": "#FFFFFF"
+    }
+}
