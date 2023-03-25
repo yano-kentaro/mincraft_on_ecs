@@ -17,16 +17,16 @@ resource "aws_ecs_task_definition" "minecraft_task" {
   family                   = "minecraft_task"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
-  cpu                      = "4096"
-  memory                   = "8192"
+  cpu                      = "8192"
+  memory                   = "16384"
   execution_role_arn       = aws_iam_role.ecs_execution_role.arn
   task_role_arn            = aws_iam_role.ecs_task_role.arn
 
   container_definitions = jsonencode([{
     name      = "minecraft_server"
     image     = var.minecraft_server_image
-    cpu       = 4096
-    memory    = 8192
+    cpu       = 8192
+    memory    = 16384
     essential = true
     portMappings = [
       {
