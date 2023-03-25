@@ -69,3 +69,15 @@ resource "aws_route_table_association" "minecraft_route_table_association_2" {
   subnet_id      = aws_subnet.minecraft_subnet_2.id
   route_table_id = aws_route_table.minecraft_route_table.id
 }
+
+# ---------------------------------------------
+# Internet Gateway
+# ---------------------------------------------
+resource "aws_internet_gateway" "minecraft_igw" {
+  vpc_id = aws_vpc.minecraft_vpc.id
+
+  tags = {
+    Name    = "${var.project}_igw"
+    Project = var.project
+  }
+}

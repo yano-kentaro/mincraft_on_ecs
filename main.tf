@@ -19,15 +19,6 @@ provider "aws" {
   region  = var.region
 }
 
-
-
-# Internet Gateway
-resource "aws_internet_gateway" "minecraft_igw" {
-  vpc_id = aws_vpc.minecraft_vpc.id
-}
-
-
-
 # Security Group
 resource "aws_security_group" "minecraft_sg" {
   name        = "minecraft_sg"
