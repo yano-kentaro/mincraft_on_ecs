@@ -18,9 +18,3 @@ variable "minecraft_server_image" {
   default     = "itzg/minecraft-server:latest"
   description = "Docker image for the Minecraft server"
 }
-
-variable "efs_performance_mode" {
-  type        = string
-  default     = "generalPurpose"
-  description = "EFS performance mode"
-}

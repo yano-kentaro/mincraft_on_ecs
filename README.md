@@ -50,7 +50,6 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_efs_performance_mode"></a> [efs\_performance\_mode](#input\_efs\_performance\_mode) | EFS performance mode | `string` | `"generalPurpose"` | no |
 | <a name="input_minecraft_server_image"></a> [minecraft\_server\_image](#input\_minecraft\_server\_image) | Docker image for the Minecraft server | `string` | `"itzg/minecraft-server:latest"` | no |
 | <a name="input_project"></a> [project](#input\_project) | Project name | `string` | `"minecraft"` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS region | `string` | `"ap-northeast-1"` | no |
