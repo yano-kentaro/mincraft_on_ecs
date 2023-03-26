@@ -1,5 +1,5 @@
 # Minecraft Server Running on ECS on Fargate
-This is the Terraform repository for designing an infrastructure build to run a Minecraft server on ECS on Fargate.
+This Terraform repository is developed for the purpose of building a Minecraft server with ECS on Fargate.
 When the infrastructure build is complete, the NLB DNS name will be paid out and you should specify that value as the address of your Minecraft multiserver.
 
 ## Dependency Diagram
